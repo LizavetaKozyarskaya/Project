@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+<header th:insert="blocks/headerR :: headerR"></header>
+
+<div class="container mr-5">
+
+    <h2 align="middle"> Главная страница </h2>
+    <h1 align="middle">Листай, выбирай, переезжай!👩‍💻🤝🏘</h1>
+    </br>
+    <img src="../static/images/home.png" width="1100" height="400" th:src="@{images/home.png}"/>
+
+
+</div>
+
+<div th:insert="blocks/footer :: footer"></div>
+
+</body>
+</html>

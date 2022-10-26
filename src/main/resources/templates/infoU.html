@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text=" ${title}"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+<header>
+    <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+        <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+            <img src="../static/images/logo.png" width="50" height="50" th:src="@{images/logo.png}"/>
+            <span class="fs-4">НЕДВИЖИМОСТЬ</span>
+        </a>
+        <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+            <tr th:each="el : ${users1}">
+
+                <a class="me-3 py-2 text-dark text-decoration-none" th:href="'/u/' + ${el.id_Users}">Главная страница</a>
+                <a class="me-3 py-2 text-dark text-decoration-none" th:href="'/buyU/'+ ${el.id_Users}">Покупка</a>
+                <a class="me-3 py-2 text-dark text-decoration-none" th:href="'/sellU/' + ${el.id_Users}">Продажа</a>
+                <a class="me-3 py-2 text-dark text-decoration-none" th:href="'/rentU/' + ${el.id_Users}">Аренда</a>
+                <a class="me-3 py-2 text-dark text-decoration-none" th:href="'/sellerU/' + ${el.id_Users}">Риелторы</a>
+                <a class="me-3 py-2 text-dark text-decoration-none" th:href="'/infoU/' + ${el.id_Users}">Информация</a>
+                <a class="me-3 py-2 text-dark text-decoration-none" th:href="'/showU/'+ ${el.id_Users}">Сведения о операциях</a>
+                <a class="me-3 py-2 text-dark text-decoration-none" href="/">Выход из аккаунта</a>
+        </nav>
+    </div>
+</header>
+<div class="container mr-5">
+
+    <h1> Информация </h1>
+    <p>Оплата производится в белорусских рублях по курсу НБ РБ.</br>
+        Ниже представлена карта, на которой указан адрес регистрации нашего офиса.</br>
+        По всем вопросам пишите на почту pochta@gmail.com</p>
+
+    <div style="position:relative;overflow:hidden;"><a href="https://yandex.by/maps/157/minsk/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Минск</a><a href="https://yandex.by/maps/157/minsk/house/Zk4YcwZpSE0PQFtpfXR5dnlgbQ==/?ll=27.555390%2C53.884214&utm_medium=mapframe&utm_source=maps&z=13.18" style="color:#eee;font-size:12px;position:absolute;top:14px;">Проспект Дзержинского, 13 — Яндекс Карты</a><iframe src="https://yandex.by/map-widget/v1/-/CCUFuYQ5DB" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+
+</div>
+
+<div th:insert="blocks/footer :: footer"></div>
+
+</body>
+</html>
